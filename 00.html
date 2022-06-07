@@ -4,15 +4,15 @@
 </head>
 <body>
 
-<img  id="img" src='' herf="" width="350px" controls /></img>
- 
- <iframe width='100%' height='100%' src=''></iframe>
+<!-- <img  id="img" src='' herf="" width="350px" controls /></img>
+ --> 
+ <iframe width='100%' height='180 vh' src='' allowfullscreen webkitallowfullscreen></iframe>
 <!-- 	 <iframe src="https://sihati-test.000webhostapp.com/hat_003.pdf" width="640" height="480"></iframe>
  -->   <!-- <iframe src="https://docs.google.com/viewer?embedded=true&url=https://sihati-test.000webhostapp.com/hat_003.pdf" width="640" height="480"></iframe> -->
 <!-- <iframe style="float:right;" herf=""  width='400' height='300' allowfullscreen webkitallowfullscreen></iframe> -->
 <!-- <embed src="" width="800px" height="2100px" />
  -->
-<a href =""> </a>
+<!-- <a href =""> </a> -->
 
 <script>
 	var full_url = 'https://sihati-test.000webhostapp.com/hat_003.pdf';
@@ -27,7 +27,7 @@ reader.readAsDataURL(blob);
 reader.onloadend = function() {
   var base64data = reader.result;                
   console.log(base64data);
-document.querySelector("iframe").src = "/ViewerJS/#index.html?type=pdf#https://sihati-test.000webhostapp.com/hat_003.pdf" //.."+base64data;
+document.querySelector("iframe").src = "/ViewerJS/#"+base64data;//https://sihati-test.000webhostapp.com/hat_003.pdf" ;//.."+base64data;
 }
 var a = document.createElement('a');
             a.href = blobURL;
