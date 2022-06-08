@@ -15,6 +15,8 @@
 <!-- <a href =""> </a> -->
 
 <script>
+	let newTab = window.open();
+
 	var full_url = 'https://sihati-test.000webhostapp.com/hat_003.pdf';
 	  fetch(full_url, { method: 'GET'})
         .then(response => response.blob())
@@ -22,6 +24,9 @@
           const newBlob = new Blob([blob], {type: "application/pdf"});
           var blobURL = URL.createObjectURL(newBlob);
           console.log(blobURL);
+		   newTab.location.href = "/pdf.js-gh-pages/web/viewer.html?file="+blobURL;
+
+
 		   window.open("/pdf.js-gh-pages/web/viewer.html?file="+blobURL);
           var reader = new FileReader();
 reader.readAsDataURL(blob); 
