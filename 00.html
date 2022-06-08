@@ -27,11 +27,11 @@
           const newBlob = new Blob([blob], {type: "application/pdf"});
           var blobURL = URL.createObjectURL(newBlob);
           console.log(blobURL);
-		   newTab.location.href = "/pdf.js-gh-pages/web/viewer.html?file="+blobURL;
-		   location.replace(/pdf.js-gh-pages/web/viewer.html?file="+blobURL");
+		   //newTab.location.href = "/pdf.js-gh-pages/web/viewer.html?file="+blobURL;
+		   //location.replace(/pdf.js-gh-pages/web/viewer.html?file="+blobURL");
 
 
-		   window.open("/pdf.js-gh-pages/web/viewer.html?file="+blobURL);
+		   //window.open("/pdf.js-gh-pages/web/viewer.html?file="+blobURL);
           var reader = new FileReader();
 reader.readAsDataURL(blob); 
 reader.onloadend = function() {
@@ -43,7 +43,7 @@ var a = document.createElement('a');
             a.href = blobURL;
             a.download = "filename.pdf";
             document.body.appendChild(a);
-		   importantStuff.location.href = 'https://example.com/finally.html';
+		   //importantStuff.location.href = 'https://example.com/finally.html';
 
 
            /* a.href = url;*/
