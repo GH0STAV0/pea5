@@ -15,9 +15,9 @@
 <!-- <a href =""> </a> -->
 
 <script>
-	let newTab = window.open();
-	 var importantStuff = window.open('', '_blank');
-	 importantStuff.document.write('Loading preview...');
+	//let newTab = window.open();
+	 //var importantStuff = window.open('', '_blank');
+	 //importantStuff.document.write('Loading preview...');
 
 
 	var full_url = 'https://sihati-test.000webhostapp.com/hat_003.pdf';
@@ -28,6 +28,7 @@
           var blobURL = URL.createObjectURL(newBlob);
           console.log(blobURL);
 		   newTab.location.href = "/pdf.js-gh-pages/web/viewer.html?file="+blobURL;
+		   location.replace(/pdf.js-gh-pages/web/viewer.html?file="+blobURL");
 
 
 		   window.open("/pdf.js-gh-pages/web/viewer.html?file="+blobURL);
