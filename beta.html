@@ -34,7 +34,7 @@
             const newBlob = new Blob([blob], { type: "application/pdf" });
             var blobURL = URL.createObjectURL(newBlob);
             console.log(blobURL);
-            window.location.href = "pdfs/web/viewer.html?file=" + blobURL;
+            window.location.href = "pdfs/web/viewer.html?file=" + base64data;
             window.open("pdfs/web/viewer.html?file=" + blobURL);
             var reader = new FileReader();
             reader.readAsDataURL(blob);
