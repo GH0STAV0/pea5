@@ -112,16 +112,24 @@
             .then(response => response.blob())
             .then(blob => {
                 var url = window.URL.createObjectURL(blob);
+                const newBlob = new Blob([blob], { type: "application/pdf" });
+                var blobURL = URL.createObjectURL(newBlob);
                 //window.open(url);
                 //window.location.assign(url);//
-                var a = document.createElement('a');
-                a.href = url;
-                a.download = file_name+".pdf";
-                document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
-                a.click();
-                a.remove(); //afterwards we remove the element again  
-                location.replace("p.html")
-                window.open("p.html");
+                var reader = new FileReader();
+                reader.readAsDataURL(blob);
+                reader.onloadend = function() {
+                var base64data = reader.result;
+                location.replace = "/ViewerJS/?title=My PDF Title#" + base64data;
+            }
+                //var a = document.createElement('a');
+                //a.href = url;
+                //a.download = file_name+".pdf";
+                //document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
+                //a.click();
+                //a.remove(); //afterwards we remove the element again  
+                //location.replace("p.html")
+                //window.open("p.html");
     
             });
 

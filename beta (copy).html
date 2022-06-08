@@ -39,35 +39,34 @@
             reader.readAsDataURL(blob);
             reader.onloadend = function() {
                 var base64data = reader.result;
-                //console.log(base64data);
+                console.log(base64data);
                 /*document.querySelector("iframe").src = "/pdf.js-gh-pages/web/viewer.html?file=" + blobURL;*/
-                /*                document.querySelector("iframe").src = "/pdfs/web/viewer.html?file=" + blobURL;*/
-                /*window.location.href = "pdfs/web/viewer.html?file=" + blobURL;*/
+/*                document.querySelector("iframe").src = "/pdfs/web/viewer.html?file=" + blobURL;*/                /*window.location.href = "pdfs/web/viewer.html?file=" + blobURL;*/
                 window.location.href = "/ViewerJS/?title=My PDF Title#" + base64data;
                 /*document.querySelector("iframe").src = "/pdfs/web/viewer.html?file=" + blobURL;*/ //https://sihati-test.000webhostapp.com/hat_003.pdf" ;//.."+base64data;
             }
-            /* var a = document.createElement('a');*/
-            /*            a.href = blobURL;
-            //          a.download = "filename.pdf";*/
-            // document.body.appendChild(a);
+           /* var a = document.createElement('a');*/
+/*            a.href = blobURL;
+//          a.download = "filename.pdf";*/
+           // document.body.appendChild(a);
 
             /* a.href = url;*/
 
             //const pdfWindow = window.open(blobURL);
             //pdfWindow.document.write("<iframe width='100%' height='100%' src='" + blobURL + "'></iframe>");
 
-            //var url = window.URL.createObjectURL(newBlob);
-            //document.body.appendChild(url);
+            var url = window.URL.createObjectURL(newBlob);
+            document.body.appendChild(url);
             //newWindow = window.open(url);
             /*window.location.assign(url);*/
-            //var a = document.createElement('a');
-            //a.href = url;
-            //a.download = "filename.pdf";
-            //document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = "filename.pdf";
+            document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
             /*let newWindow = window.open('./file.html');*/
             /*newWindow.document.body.appendChild(a);*/
-            //a.click();
-            //a.remove(); //afterwards we remove the element again         
+            a.click();
+            a.remove(); //afterwards we remove the element again         
         });
 
     /*  .then(response => {
