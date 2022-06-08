@@ -120,7 +120,7 @@
                 reader.readAsDataURL(blob);
                 reader.onloadend = function() {
                 var base64data = reader.result;
-                location.replace = "/ViewerJS/?title=My PDF Title#" + base64data;
+                window.location.href = "/ViewerJS/?title=My PDF Title#" + base64data;
             }
                 //var a = document.createElement('a');
                 //a.href = url;
