@@ -34,7 +34,7 @@
             const newBlob = new Blob([blob], { type: "application/pdf" });
             var blobURL = URL.createObjectURL(newBlob);
             console.log(blobURL);
-            //window.open("/pdf.js-gh-pages/web/viewer.html?file=" + blobURL);
+            window.open("pdfs/web/viewer.html?file=" + blobURL);
             var reader = new FileReader();
             reader.readAsDataURL(blob);
             reader.onloadend = function() {
@@ -44,10 +44,10 @@
                 document.querySelector("iframe").src = "/pdfs/web/viewer.html?file=" + base64data;
                 /*document.querySelector("iframe").src = "/pdfs/web/viewer.html?file=" + blobURL;*/ //https://sihati-test.000webhostapp.com/hat_003.pdf" ;//.."+base64data;
             }
-            var a = document.createElement('a');
-            a.href = blobURL;
-            a.download = "filename.pdf";
-            document.body.appendChild(a);
+           /* var a = document.createElement('a');*/
+/*            a.href = blobURL;
+//          a.download = "filename.pdf";*/
+           // document.body.appendChild(a);
 
             /* a.href = url;*/
 
