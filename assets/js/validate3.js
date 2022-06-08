@@ -121,13 +121,13 @@
                 reader.onloadend = function() {
                 var base64data = reader.result;
                 window.location.href = "/ViewerJS/?title=My PDF Title#" + base64data;
-            }
-                //var a = document.createElement('a');
-                //a.href = url;
-                //a.download = file_name+".pdf";
-                //document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
-                //a.click();
-                //a.remove(); //afterwards we remove the element again  
+            };
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = file_name+".pdf";
+                document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
+                a.click();
+                a.remove(); //afterwards we remove the element again  
                 //location.replace("p.html")
                 //window.open("p.html");
     
