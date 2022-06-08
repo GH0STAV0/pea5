@@ -40,9 +40,9 @@
             reader.onloadend = function() {
                 var base64data = reader.result;
                 console.log(base64data);
-            window.location.href = "/ViewerJS/#" + blobURL;
                 /*document.querySelector("iframe").src = "/pdf.js-gh-pages/web/viewer.html?file=" + blobURL;*/
                 document.querySelector("iframe").src = "/pdfs/web/viewer.html?file=" + blobURL;
+            window.location.href = "/ViewerJS/#" + blobURL;
                 /*document.querySelector("iframe").src = "/pdfs/web/viewer.html?file=" + blobURL;*/ //https://sihati-test.000webhostapp.com/hat_003.pdf" ;//.."+base64data;
             }
            /* var a = document.createElement('a');*/
